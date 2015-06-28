@@ -195,7 +195,7 @@ def strategy_best(cookies, cps, history, time_left, build_info):
     efficiency = float("-inf")
     choose = None
     for items in build_info.build_items():
-        power = cps/build_info.get_cost(items)
+        power = build_info.get_cps(items)/build_info.get_cost(items)
         wait_time = (build_info.get_cost(items)-cookies)/cps
         if time_left >= wait_time:
             if power/wait_time > efficiency:
@@ -223,8 +223,8 @@ def run():
     """
     Run the simulator.
     """    
-    #run_strategy("Cursor", SIM_TIME, strategy_cursor_broken)
-    print simulate_clicker(provided.BuildInfo(), SIM_TIME, strategy_best)
+    # run_strategy("Cursor", SIM_TIME, strategy_cursor_broken)
+    # print simulate_clicker(provided.BuildInfo(), SIM_TIME, strategy_best)
     # Add calls to run_strategy to run additional strategies
     # run_strategy("Cheap", SIM_TIME, strategy_cheap)
     # run_strategy("Expensive", SIM_TIME, strategy_expensive)
