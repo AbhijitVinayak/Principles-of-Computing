@@ -14,9 +14,10 @@ turn = 0
 
 # helper function to initialize globals
 def new_game():
-    global state, exposed, turn
+    global state, exposed, turn, clicked
     state = 0
     turn = 0
+    clicked = []
     exposed = [ False for dummy_x in range(16)  ] 
     random.shuffle(deck)
      
